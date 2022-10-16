@@ -2,6 +2,8 @@
 
 clear;
 
+cd 'C:\Users\ACER\OneDrive\QEM\Tercer semestre\Clases\Labor\Set6'
+
 ybart=1;
 
 rng(0,'twister');
@@ -12,9 +14,12 @@ selection=unidrnd(1000);
 
 y1=ybar1(selection);
 
+
 z=nan(60,1);
 
 z(1)=y1-1;
+
+z1=z(1);
 
 gamma=0.96;
 sigma2epsilon=0.045;
@@ -25,8 +30,23 @@ end
 
 plot(z)
 
+%% Aproximation of the process through a Markov Chain
 
+[y,p]=tauchen(0.99,0.045,18);
 
+[zmarkov,ind]=mcdraws(y,p,60,z1,500);
 
+subplot(1,2,1)
+plot(z); grid on;
+xlabel('Length','Interpreter','latex','fontsize',12)
+ylabel('z','Interpreter','latex','fontsize',12)
+%set(gca,'Color',[0 0.4470 0.7410])
 
+subplot(1,2,2)
+plot(zmarkov); grid on;
+xlabel('Length','Interpreter','latex','fontsize',12)
+ylabel('zmarkov','Interpreter','latex','fontsize',12)
+%set(gca,'Color',[0 0.4470 0.7410])
+
+plot(zmarkov)
 
