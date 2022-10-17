@@ -2,7 +2,7 @@
 
 clear;
 
-cd 'C:\Users\ACER\OneDrive\QEM\Tercer semestre\Clases\Labor\Set6'
+cd 'C:\Users\mpkrz\OneDrive - SGH\Dokumenty\GitHub\ps6_labour_jc'
 
 ybart=1;
 
